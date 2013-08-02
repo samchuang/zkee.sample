@@ -1,0 +1,22 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="ZK Timeplot" border="normal"
+ 	apply="org.zkoss.bind.BindComposer"
+    viewModel="@id('vm') @init('zkee.sample.timeplot.TimeplotViewModel')">
+	<timeplot width="1000px" height="300px" hideTimeFlag="@load(vm.displayConfig.hideTime)">
+	   <plotinfo id="plotinfo"
+            eventSourceUri="/misc/us_history.xml"
+            plotDataSource="@load(vm.plotDataSource)"
+            valueGeometry="@load(vm.valueGeometry)"
+            timeGeometry="@load(vm.timeGeometry)"
+            lineColor="@load(vm.displayConfig.lineColor)"
+            lineWidth="@load(vm.displayConfig.lineWidth)"
+            fillColor="@load(vm.displayConfig.fillColor)"
+            eventLineWidth="@load(vm.displayConfig.eventLineWidth)"
+            dotColor="@load(vm.displayConfig.dotColor)"
+            dotRadius="@load(vm.displayConfig.dotRadius)"
+            showValues="@load(vm.displayConfig.showValues)"
+            hideValueFlag="@load(vm.displayConfig.hideValue)"></plotinfo>
+	</timeplot>
+</window>
+</zk>
